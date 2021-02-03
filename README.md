@@ -35,7 +35,7 @@ wget https://github.com/guardiankey/guardiankey-magento2-authsecurity/archive/ma
 unzip master.zip
 
 # create the extension's directory in your Magento's directory
-$MAGENTOROOT = "/var/www/html/magento" # SET YOUR DIR HERE
+export MAGENTOROOT = "/var/www/html/magento" # SET YOUR DIR HERE
 mkdir -p $MAGENTOROOT/app/code/GuardianKey/AuthSecurity/
 
 # Move files 
