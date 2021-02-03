@@ -1,0 +1,12 @@
+Security Alert!
+
+User reported event below as an attack!
+
+Username: [USERNAME]
+Date: [DATETIME]
+System:	 [SYSTEM]
+Location: [LOCATION]
+IP address:	[IPADDRESS]
+
+You should handle this as a security incident!
+

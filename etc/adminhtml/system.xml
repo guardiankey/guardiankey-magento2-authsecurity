@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="guardiankey" translate="label" sortOrder="600">
+            <label>GuardianKey</label>
+        </tab>
+        <section id="authsecurity" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Auth Security</label>
+            <tab>guardiankey</tab>
+            <resource>GuardianKey_AuthSecurity::authsecurity_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If No, the module will be totally inactivated.</comment>
+                </field>
+                <field id="test_mode" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Test mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If yes, notifications will not be sent to users, but to the support email address inserted below.</comment>
+                </field>
+                <field id="organization_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Organization ID</label>
+                    <comment>You can find this in https://panel.guardiankey.io .</comment>
+                </field>
+                <field id="authgroup_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Authgroup ID</label>
+                    <comment>You can find this in https://panel.guardiankey.io . This Authgroup ID is for customer's access attempts.</comment>
+                </field>
+                <field id="authgroup_id_admin" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Authgroup ID for admin</label>
+                    <comment>This text will display on the frontend. This Authgroup ID is for administration access attempts.</comment>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>KEY</label>
+                    <comment>You can find this in https://panel.guardiankey.io .</comment>
+                </field>
+                <field id="iv" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>IV</label>
+                    <comment>You can find this in https://panel.guardiankey.io .</comment>
+                </field>
+                <field id="language" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification language</label>        
+                    <source_model>GuardianKey\AuthSecurity\Block\Adminhtml\System\Config\Language</source_model>
+                    <comment>This language will be used in the verification page and internal email messages.</comment>
+                </field>
+                <field id="from_email_addr" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sender email address</label>
+                    <comment>Sender email address, ie, the "From" in notification messages.</comment>
+                </field>
+                <field id="support_email_addr" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Support email address</label>
+                    <comment>Attack reported by users will be sent to this email address.</comment>
+                </field>
+                <field id="support_email_addr_bcc" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Bcc support email</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If yes, notifications will also be sent to support (bcc).</comment>
+                </field>
+                <field id="email_subject" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email subject</label>
+                    <comment>Subject for the notification email message.</comment>
+                </field>
+                <field id="email_html" translate="label" type="editor" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email HTML content</label>
+                    <comment>Notification email content in HTML.</comment>
+                    <frontend_model>GuardianKey\AuthSecurity\Block\Adminhtml\System\Config\Editor</frontend_model>
+                </field>
+                <field id="email_text" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email text content</label>
+                    <comment>Notification email content in text.</comment>
+                </field>
+
+
+            </group>
+        </section>
+    </system>
+</config>

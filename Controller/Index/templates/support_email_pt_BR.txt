@@ -1,0 +1,12 @@
+Incidente de Segurança!
+
+O usuário reportou o evento abaixo como um ataque!
+
+Usuário: [USERNAME]
+Data: [DATETIME]
+Sistema:	 [SYSTEM]
+Localização: [LOCATION]
+IP:	[IPADDRESS]
+
+Você deve tratar isso como um incidente de segurança!
+

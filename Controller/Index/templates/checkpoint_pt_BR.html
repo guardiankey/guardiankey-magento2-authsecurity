@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Verificação de acesso</title>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="/static/adminlte/css/ionicons.min.css?adminlte=2.3.3" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/adminlte.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+
+    
+    <!-- Skin  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+            
+    <!-- jQuery 2.0.2 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <!-- <script src="/static/adminlte/js/bootstrap.min.js?adminlte=2.3.3"></script> -->
+    <!-- AdminLTE App -->
+    <!-- <script src="/static/adminlte/js/AdminLTE/app.js?adminlte=2.3.3"></script> -->
+
+
+    <style>
+.login-box-body {
+background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+    </style>
+
+  </head>
+
+  <body class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <strong>Verificação de Acesso</strong>
+    </div>
+    <div class="login-box-body">
+       <p>Recentemente detectamos um novo acesso à sua conta de usuário.</p><br />
+        <center>
+        <table border="0" width="100%">
+        <tr><td style="text-align:right">Usuário:   </td><td style="text-align:left">&nbsp;[USERNAME]</td></tr>
+        <tr><td style="text-align:right">Data:  </td><td style="text-align:left"><span id='datetime'></span>    </td></tr>                          </td></tr>
+        <tr><td style="text-align:right">Sistema:     </td><td style="text-align:left">&nbsp;[SYSTEM]</td></tr>
+        <tr><td style="text-align:right">Localização:   </td><td style="text-align:left">&nbsp;[LOCATION]</td></tr>
+        <tr><td style="text-align:right">IP: </td><td style="text-align:left">&nbsp;[IPADDRESS]</td></tr>
+        </table>
+        </center>
+        <script>
+        document.getElementById("datetime").innerHTML = '&nbsp;'+(new Date([TIMESTAMP]*1000) ).toLocaleString();
+        </script>
+        <br />
+        <p>Por favor, informe se foi você ou não!
+          O sistema aprende com a sua resposta para prover uma segurança inteligente.</p>
+        <form method="post">
+            <div class="row">
+            <div class="col-xs-5">
+                <button type="submit" name="action" value="BAD" class="btn btn-danger btn-block btn-flat">Não fui eu!</button>
+            </div>
+            <div class="col-xs-5 col-xs-offset-2">
+                <button type="submit" name="action" value="GOOD" class="btn btn-success btn-block btn-flat">Fui eu!</button>
+            </div>
+            </div>
+        </form>
+    </div>
+  </div>
+    </body>
+</html>
