@@ -140,6 +140,8 @@ class GuardianKeyValidation
         }
         try{
             $this->GKCheckaccess($username);
+        } catch (InvalidEmailOrPasswordException $e) {
+            throw $e;
         }catch (\Exception $e) {   }
         
         return $result;
