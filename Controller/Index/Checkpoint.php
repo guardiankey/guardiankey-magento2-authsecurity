@@ -7,7 +7,7 @@ use GuardianKey\AuthSecurity\Lib\GuardianKey;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 
-class Checkpoint extends \Magento\Framework\App\Action\Action  implements \Magento\Framework\App\CsrfAwareActionInterface
+class Checkpoint extends \Magento\Framework\App\Action\Action  //implements \Magento\Framework\App\CsrfAwareActionInterface
 {
 
 	protected $helperData;
@@ -152,12 +152,12 @@ class Checkpoint extends \Magento\Framework\App\Action\Action  implements \Magen
 	}
 
 
-	/** * @inheritDoc */ 
-public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException { 
-	return null; 
-} 
-/** * @inheritDoc */ 
-public function validateForCsrf(RequestInterface $request): ?bool {     
-return true; 
-}
+	/** * @inheritDoc */
+	public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException {
+		return null;
+	}
+	/** * @inheritDoc */
+	public function validateForCsrf(RequestInterface $request): ?bool {
+	return true;
+	}
 }
