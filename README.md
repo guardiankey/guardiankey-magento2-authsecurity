@@ -35,11 +35,11 @@ wget https://github.com/guardiankey/guardiankey-magento2-authsecurity/archive/ma
 unzip master.zip
 
 # create the extension's directory in your Magento's directory
-export MAGENTOROOT = "/var/www/html/magento" # SET YOUR DIR HERE
+export MAGENTOROOT="/var/www/html/magento" # SET YOUR DIR HERE
 mkdir -p $MAGENTOROOT/app/code/GuardianKey/AuthSecurity/
 
 # Move files 
-mv guardiankey-magento2-authsecurity/*  $MAGENTOROOT/app/code/GuardianKey/AuthSecurity/
+mv guardiankey-magento2-authsecurity-master/*  $MAGENTOROOT/app/code/GuardianKey/AuthSecurity/
 
 # Magento's commands now
 cd $MAGENTOROOT
@@ -51,6 +51,7 @@ bin/magento setup:di:compile                          # generate some files
 bin/magento module:status GuardianKey_AuthSecurity    # confirm the extension's status
 bin/magento cache:clean                               # clean cache
 bin/magento maintenance:disable                       # disable the maintenance mode
+chown -R www-data. $MAGENTOROOT                       # set file owners. www-data may vary in linux distros
 ```
 
 The extension's configuration can be done at path below, in the Magento's administration webpage. Below each field there is a tip. Change the values and save!  You will need some information that can be found at https://panel.guardiankey.io. 
