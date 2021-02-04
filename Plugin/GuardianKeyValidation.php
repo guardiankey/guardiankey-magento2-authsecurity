@@ -41,13 +41,11 @@ class GuardianKeyValidation
 
     protected function GKLoginFailed($username)
     {
-        $this->logger->info("GuardianKey: login failed");
         $config = new Data($this->scopeConfig);
         if($config->getGeneralConfig("enable"))
         {
             $GK    = $this->GKObject();
             $GKJSONReturn = $GK->checkaccess($username,$username,"1");  
-            // $this->logger->info(json_encode($GKJSONReturn));
         }
     }
 
@@ -130,7 +128,7 @@ class GuardianKeyValidation
         } catch (EmailNotConfirmedException $e) {
             $this->GKCheckaccess($username);
             throw $e;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->GKLoginFailed($username);
             throw $e;
         }

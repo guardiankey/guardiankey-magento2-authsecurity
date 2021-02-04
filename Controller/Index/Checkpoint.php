@@ -153,11 +153,11 @@ class Checkpoint extends \Magento\Framework\App\Action\Action  //implements \Mag
 
 
 	/** * @inheritDoc */
-	public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException {
+	public function createCsrfValidationException( RequestInterface $request ) {
 		return null;
 	}
 	/** * @inheritDoc */
-	public function validateForCsrf(RequestInterface $request): ?bool {
+	public function validateForCsrf(RequestInterface $request) {
 	return true;
 	}
 }
