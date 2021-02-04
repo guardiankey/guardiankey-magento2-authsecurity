@@ -66,7 +66,7 @@ class Checkpoint extends \Magento\Framework\App\Action\Action  //implements \Mag
                 $emailtext=str_replace("[SYSTEM]",$returned->SYSTEM,$emailtext);
                 $emailtext=str_replace("[IPADDRESS]",$returned->IPADDRESS,$emailtext);
 
-				$email = new \Zend_Mail();
+				$email = new \Zend_Mail('UTF-8');
 				$email->setSubject($this->i18n("Security Incident Reported"));
 				$email->setBodyText($emailtext);
 				$email->setFrom($this->helperData->getGeneralConfig("from_email_addr"));

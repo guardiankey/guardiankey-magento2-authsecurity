@@ -46,23 +46,23 @@
 							<tbody>
 								<tr>
 									<td style="text-align:right">Username:</td>
-									<td style="text-align:left">&nbsp;[USERNAME]</td>
+									<td style="text-align:left">[USERNAME]</td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Date:</td>
-									<td style="text-align:left">&nbsp;[DATETIME]</td>
+									<td style="text-align:left">[DATETIME]</td>
 								</tr>
 								<tr>
 									<td style="text-align:right">System:</td>
-									<td style="text-align:left">&nbsp;[SYSTEM]</td>
+									<td style="text-align:left">[SYSTEM]</td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Location:</td>
-									<td style="text-align:left">&nbsp;[LOCATION]</td>
+									<td style="text-align:left">[LOCATION]</td>
 								</tr>
 								<tr>
 									<td style="text-align:right">IP address:</td>
-									<td style="text-align:left">&nbsp;[IPADDRESS]</td>
+									<td style="text-align:left">[IPADDRESS]</td>
 								</tr>
 							</tbody>
 						</table>
@@ -77,7 +77,7 @@
 			<table cellspacing="0" style="border-collapse:collapse; width:600px">
 				<tbody>
 					<tr>
-						<td style="background-color:#f7f7f7; text-align:center">&nbsp;
+						<td style="background-color:#f7f7f7; text-align:center">
 						<p style="margin-left:0px; margin-right:0px">GuardianKey</p>
 						</td>
 					</tr>

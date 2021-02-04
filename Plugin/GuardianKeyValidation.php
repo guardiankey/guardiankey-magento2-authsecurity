@@ -9,18 +9,23 @@ use Magento\Framework\Exception\InvalidEmailOrPasswordException;
 use Magento\Framework\Exception\EmailNotConfirmedException;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Psr\Log\LoggerInterface as PsrLogger;
 
 class GuardianKeyValidation
 {
     protected $storeManager;
     protected $scopeConfig;
+    protected $logger;
 
     public function __construct(
         StoreManagerInterface $storeManager,
-        ScopeConfigInterface $scopeConfig)
+        ScopeConfigInterface $scopeConfig,
+        PsrLogger $logger
+        )
     {
         $this->storeManager = $storeManager;
         $this->scopeConfig  = $scopeConfig;
+        $this->logger       = $logger;
     }
 
     private function GKObject()
@@ -99,11 +104,12 @@ class GuardianKeyValidation
                 $emailtext=str_replace("[]","",$emailtext);
                 $emailtext=str_replace("()","",$emailtext);
                 
-                $email = new \Zend_Mail();
+                $email = new \Zend_Mail('UTF-8');
                 $email->setSubject($config->getGeneralConfig("email_subject"));
                 $email->setBodyText($emailtext);
                 $email->setFrom($config->getGeneralConfig("from_email_addr"));
                 $email->setBodyHtml($emailhtml);
+                
                 if(!$config->getGeneralConfig("test_mode"))
                 {
                     $email->addTo($username);
@@ -132,7 +138,10 @@ class GuardianKeyValidation
             $this->GKLoginFailed($username);
             throw $e;
         }
-        $this->GKCheckaccess($username);
+        try{
+            $this->GKCheckaccess($username);
+        }catch (\Exception $e) {   }
+        
         return $result;
     }
 
