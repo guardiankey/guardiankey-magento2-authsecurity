@@ -142,7 +142,9 @@ class GuardianKeyValidation
             $this->GKCheckaccess($username);
         } catch (InvalidEmailOrPasswordException $e) {
             throw $e;
-        }catch (\Exception $e) {   }
+        }catch (\Exception $e) {
+            $this->logger->warning("GuardianKey returned unexpected response. Bypassing! Exception: ".$e->getMessage());
+        }
         
         return $result;
     }
